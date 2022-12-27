@@ -10,7 +10,7 @@ module.exports = {
     plugin(function ({ addComponents }) {
       addComponents({
         ".bg-color": {
-          backgroundColor: '#4C75A3'
+          backgroundColor: '#F0F2F5'
         },
       });
     }),
