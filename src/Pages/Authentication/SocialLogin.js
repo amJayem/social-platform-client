@@ -8,7 +8,7 @@ const SocialLogin = () => {
 
   const handleSocialLogin = () => {
     socialSignIn(provider)
-      .then((data) => console.log(data))
+      // .then((data) => console.log(data))
       .catch((e) => console.error("google auth error => ", e));
   };
   return (
@@ -21,7 +21,7 @@ const SocialLogin = () => {
         type="button"
         data-mdb-ripple="true"
         data-mdb-ripple-color="light"
-        className="inline-block p-3 bg-white text-white font-medium text-xs leading-tight uppercase rounded-full shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out mx-1"
+        className="inline-block p-3 bg-white text-white font-medium text-xs leading-tight uppercase rounded-full shadow-md hover:bg-blue-200 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out mx-1"
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"
