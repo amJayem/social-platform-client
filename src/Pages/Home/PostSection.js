@@ -3,8 +3,7 @@ import axios from "axios";
 import { toast } from "react-hot-toast";
 import useAuthProvider from "../../hooks/useAuthProvider";
 import { Link } from "react-router-dom";
-import Spinner from "../../hooks/Spinner";
-import { GoPerson } from "react-icons/go";
+import Spinner from "../../hooks/useSpinner";
 
 const PostSection = () => {
   const { user, loading, setLoading } = useAuthProvider();

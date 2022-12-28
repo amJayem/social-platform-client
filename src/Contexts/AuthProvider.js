@@ -6,7 +6,6 @@ import {
   signInWithEmailAndPassword,
   signInWithPopup,
   signOut,
-  updateCurrentUser,
   updateProfile,
 } from "firebase/auth";
 import { app } from "../firebase/firebase.config";

@@ -5,7 +5,7 @@ import NavHeader from "../shared/NavHeader";
 import SocialLogin from "./SocialLogin";
 import { toast } from "react-hot-toast";
 import axios from "axios";
-import Spinner from "../../hooks/Spinner";
+import Spinner from "../../hooks/useSpinner";
 
 const Register = () => {
   const { user, signUp, updateUser, loading, setLoading } = useAuthProvider();

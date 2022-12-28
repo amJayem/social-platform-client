@@ -10,7 +10,7 @@ const NavHeader = () => {
   const navItems = (
     <ul className="menu menu-horizontal px-1">
       <li>
-        <Link to="">Media</Link>
+        <Link to="/media">Media</Link>
         <Link to="">Messages</Link>
         <Link to="">About</Link>
         {!user?.uid ? (

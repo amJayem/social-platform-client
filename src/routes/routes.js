@@ -3,6 +3,8 @@ import Main from '../layout/Main';
 import Home from '../Pages/Home/Home';
 import Login from '../Pages/Authentication/Login';
 import Register from '../Pages/Authentication/Register';
+import Media from '../Pages/Media/Media';
+import MediaDetails from '../Pages/Media/MediaDetails';
 export const routes = createBrowserRouter([
     {
         path:'/',
@@ -11,6 +13,14 @@ export const routes = createBrowserRouter([
             {
                 path: '/',
                 element: <Home/>
+            },
+            {
+                path: '/media',
+                element: <Media/>
+            },
+            {
+                path: '/media-details/:id',
+                element: <MediaDetails/>
             },
         ],
     },
