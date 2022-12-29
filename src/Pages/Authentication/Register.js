@@ -117,7 +117,7 @@ const Register = () => {
                     <input
                       name="image"
                       type="file"
-                      className="file-input file-input-bordered file-input-primary w-full max-w-xs"
+                      className="file-input file-input-bordered file-input-info w-full max-w-xs"
                       required
                     />
                   </div>

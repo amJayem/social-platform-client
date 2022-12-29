@@ -7,7 +7,7 @@ const Main = () => {
   return (
     <div className="">
       <NavHeader />
-      <div className="max-w-6xl bg-teal-50 mx-auto min-h-screen my-5">
+      <div className="max-w-6xl bg-teal-50 mx-auto min-h-screen my-2">
         <div className="p-2 mx-5">
         <Outlet />
         </div>

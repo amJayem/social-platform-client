@@ -32,7 +32,7 @@ const Media = () => {
               <p>{post.post}</p>
               <Link
                 to={`/post-details/${post._id}`}
-                className="mt-2 btn btn-primary "
+                className="mt-2 btn btn-info text-white "
               >
                 Details
               </Link>

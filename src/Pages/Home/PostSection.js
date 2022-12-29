@@ -58,14 +58,14 @@ const PostSection = () => {
           <div className="flex flex-nowrap">
             {user?.uid && (
               <div className="avatar p-3">
-                <div className="w-24 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2">
+                <div className="w-24 rounded-full ring ring-info ring-offset-base-100 ring-offset-2">
                   <img alt="" src={user?.photoURL} />
                 </div>
               </div>
             )}
             <textarea
               name="post"
-              className="textarea textarea-primary w-full"
+              className="textarea textarea-info w-full"
               placeholder="Write your post"
               required
             ></textarea>
@@ -73,7 +73,7 @@ const PostSection = () => {
           <input
             name="image"
             type="file"
-            className="file-input file-input-bordered file-input-primary w-full max-w-xs mt-5"
+            className="file-input file-input-bordered file-input-info w-full max-w-xs mt-5"
             required
           />
           <div className="border-b mt-2"></div>
@@ -83,7 +83,7 @@ const PostSection = () => {
             ) : (
               <input
                 type="submit"
-                className="btn bg-primary"
+                className="btn bg-info"
                 value="Post"
                 disabled={!user?.uid}
               />

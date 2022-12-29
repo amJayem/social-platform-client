@@ -147,7 +147,7 @@ const MediaDetails = () => {
           <div>
             <button
               onClick={() => handleAddLike(count)}
-              className="btn btn-primary"
+              className="btn btn-info text-white"
               disabled={activities?.like === true || refresh === true}
             >
               <FaThumbsUp />
@@ -165,14 +165,14 @@ const MediaDetails = () => {
               <textarea
                 name="comment"
                 required
-                className="textarea textarea-primary w-full"
+                className="textarea textarea-info w-full"
                 placeholder="Put your comment here"
               ></textarea>
               <div>
                 <input
                   type="submit"
                   value="post"
-                  className="btn btn-primary btn-sm "
+                  className="btn btn-info text-white btn-sm "
                 />
               </div>
             </div>

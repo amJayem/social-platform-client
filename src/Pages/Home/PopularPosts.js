@@ -27,7 +27,7 @@ const PopularPosts = () => {
                 <p>{post.post}</p>
               </div>
               <div className="p-3 card-actions justify-end">
-                <Link className="btn btn-info">See Post</Link>
+                <Link to={`post-details/${post._id}`} className="btn btn-info text-white">See Post</Link>
               </div>
             </div>
           </div>

@@ -26,7 +26,8 @@ const NavHeader = () => {
   );
   return (
     <div className="">
-      <div className="navbar bg-blue-600 rounded-b-lg text-white">
+      <div className="navbar bg-sky-400 rounded-b-lg text-white
+      shadow-lg shadow-sky-200">
         <div className="flex-1">
           <Link to="/" className="btn btn-ghost normal-case text-xl">
             Social People
