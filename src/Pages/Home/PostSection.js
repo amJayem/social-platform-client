@@ -83,7 +83,7 @@ const PostSection = () => {
             ) : (
               <input
                 type="submit"
-                className="btn bg-info"
+                className="btn btn-info text-white"
                 value="Post"
                 disabled={!user?.uid}
               />

@@ -19,11 +19,11 @@ const Media = () => {
   return (
     <div>
       <h1 className="text-3xl font-semibold text-center my-5 ">All Posts</h1>
-      <div className="flex flex-wrap ">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2 ">
         {posts?.map((post, i) => (
           <div
             key={i}
-            className="flex flex-col bg-white m-3 rounded-lg shadow-lg w-96"
+            className="flex flex-col bg-white m-3 rounded-lg shadow-lg "
           >
             <div className="p-2">
               <img className="rounded-lg" src={post.image} alt="" />

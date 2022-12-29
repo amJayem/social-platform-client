@@ -134,8 +134,8 @@ const MediaDetails = () => {
   return (
     <div>
       <div className="bg-white shadow-lg rounded-lg p-5">
-        <div className="flex justify-items-center p-5">
-          <img className="w-20 h-20 rounded-full" src={post?.photoURL} alt="" />
+        <div className="flex items-center p-5">
+          <img className="w-20 h-20 rounded-full p-1" src={post?.photoURL} alt="" />
           <h1 className="text-2xl font-semibold">{post?.displayName}</h1>
         </div>
         <div className="flex flex-col gap-4 w-3/4 mx-auto py-5">
