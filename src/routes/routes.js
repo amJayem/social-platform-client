@@ -19,7 +19,7 @@ export const routes = createBrowserRouter([
                 element: <Media/>
             },
             {
-                path: '/media-details/:id',
+                path: '/post-details/:id',
                 element: <MediaDetails/>
             },
         ],

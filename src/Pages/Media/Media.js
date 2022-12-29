@@ -1,15 +1,8 @@
-import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
 const Media = () => {
   const [posts, setPosts] = useState(["test"]);
-
-  //   axios.get("http://localhost:5000/posts").then((data) => {
-  //     // console.log(data.data[0]);
-  //     const post = data.data;
-  //     setPosts(post);
-  //   });
 
   useEffect(() => {
     fetch("http://localhost:5000/posts")
@@ -28,13 +21,21 @@ const Media = () => {
       <h1 className="text-3xl font-semibold text-center my-5 ">All Posts</h1>
       <div className="flex flex-wrap ">
         {posts?.map((post, i) => (
-          <div key={i} className="flex flex-col bg-white m-3 rounded-lg shadow-lg w-96">
+          <div
+            key={i}
+            className="flex flex-col bg-white m-3 rounded-lg shadow-lg w-96"
+          >
             <div className="p-2">
               <img className="rounded-lg" src={post.image} alt="" />
             </div>
             <div className="p-3 ">
               <p>{post.post}</p>
-              <Link to={`/media-details/${post._id}`} className="mt-2 btn btn-primary ">Details</Link>
+              <Link
+                to={`/post-details/${post._id}`}
+                className="mt-2 btn btn-primary "
+              >
+                Details
+              </Link>
             </div>
           </div>
         ))}
