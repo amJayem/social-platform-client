@@ -52,7 +52,7 @@ const PostSection = () => {
   };
 
   return (
-    <div className="min-h-screen">
+    <div className="">
       <div className="bg-white mt-5 p-5 rounded-lg shadow-md">
         <form onSubmit={handlePost}>
           <div className="flex flex-nowrap">

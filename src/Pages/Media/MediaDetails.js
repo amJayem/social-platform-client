@@ -5,14 +5,18 @@ import axios from "axios";
 import useAuthProvider from "../../hooks/useAuthProvider";
 import { toast } from "react-hot-toast";
 import { useQuery } from "@tanstack/react-query";
+import PostComments from "./PostComments";
 
 const MediaDetails = () => {
   const { user } = useAuthProvider();
   const [post, setPost] = useState();
+  const [comments, setComments] = useState([]);
   const [activities, setActivities] = useState();
   const [refresh, setRefresh] = useState(false);
   const { id } = useParams();
 
+
+  // getting single post details
   const { refetch } = useQuery({
     queryKey: [refresh],
     queryFn: async () => {
@@ -24,18 +28,21 @@ const MediaDetails = () => {
     },
   });
 
+  // getting all comments by post
   useEffect(() => {
     fetch(`http://localhost:5000/all-comments/${id}`)
       .then((res) => res.json())
       .then((data) => {
-        console.log(data);
-        // setActivities(data);
+        // console.log(data);
+        refetch();
+        setComments(data);
       })
       .catch((e) => {
         console.error("getting activities error => ", e);
       });
-  }, [refresh, id]);
+  }, [refresh, id, refetch]);
 
+  // getting like if have
   useEffect(() => {
     fetch(`http://localhost:5000/activities/${id}`)
       .then((res) => res.json())
@@ -84,16 +91,21 @@ const MediaDetails = () => {
     e.preventDefault();
     const form = e.target;
     const comment = form.comment.value;
-    console.log(comment);
+    // console.log(comment);
     const commentInfo = {
       email: user?.email,
       postId: id,
       comment: comment,
+      photoURL: user?.photoURL
     };
     axios
       .post(`http://localhost:5000/comment`, commentInfo)
       .then((data) => {
         console.log(data);
+        if(data.status === 200){
+          toast.success('Comment added');
+          form.reset();
+        }
       })
       .catch((e) => {
         console.error("commenting error => ", e);
@@ -103,7 +115,7 @@ const MediaDetails = () => {
   };
 
   const count = post?.like || 0;
-  // console.log( react);
+  // console.log(comments);
   return (
     <div>
       <div className="bg-white shadow-lg rounded-lg p-5">
@@ -137,6 +149,7 @@ const MediaDetails = () => {
               )}
               <textarea
                 name="comment"
+                required
                 className="textarea textarea-primary w-full"
                 placeholder="Put your comment here"
               ></textarea>
@@ -149,6 +162,13 @@ const MediaDetails = () => {
               </div>
             </div>
           </form>
+          <div className="border border-b-gray-300 mb-5"></div>
+          <div>
+            {comments?.map((comment) => (
+              <PostComments key={comment._id}
+              comment={comment} />
+            ))}
+          </div>
         </div>
       </div>
     </div>
