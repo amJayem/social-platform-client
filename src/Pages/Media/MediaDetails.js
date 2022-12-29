@@ -15,7 +15,6 @@ const MediaDetails = () => {
   const [refresh, setRefresh] = useState(false);
   const { id } = useParams();
 
-
   // getting single post details
   const { refetch } = useQuery({
     queryKey: [refresh],
@@ -110,6 +109,22 @@ const MediaDetails = () => {
       .catch((e) => {
         console.error("commenting error => ", e);
       });
+
+    axios
+      .patch(`http://localhost:5000/post-comment/${id}`, { comment: comment, 
+      // email: user?.email, displayName: user?.displayName 
+    })
+      // .then(res=>res.json())
+      .then((data) => {
+        // console.log(data);
+
+        if (data.status === 200) {
+          toast.success("Comment added");
+          // refetch();
+          // setRefresh(!refresh);
+        }
+      })
+      .catch((e) => console.error("comment error => ", e));
 
     setRefresh(!refresh);
   };

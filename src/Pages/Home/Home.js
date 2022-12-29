@@ -1,4 +1,5 @@
 import React from "react";
+import PopularPosts from "./PopularPosts";
 import PostSection from "./PostSection";
 import TopPosts from "./TopPosts";
 
@@ -10,6 +11,9 @@ const Home = () => {
       </div>
       <div>
         <TopPosts />
+      </div>
+      <div>
+        <PopularPosts/>
       </div>
     </div>
   );
