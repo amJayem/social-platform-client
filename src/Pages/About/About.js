@@ -27,8 +27,8 @@ const About = () => {
           edit
         </label>
       </div>
-      <div className="grid grid-cols-1 gap-4 w-56 mx-auto">
-        <label htmlFor="" className="txt">
+      <div className="grid grid-cols-1 gap-4 w-80 mx-auto">
+        <label className="txt font-semibold">
           Name
         </label>
         <input
@@ -37,18 +37,27 @@ const About = () => {
           value={aboutInfo?.name}
           readOnly
         />
+        <label className="txt font-semibold">
+          Email
+        </label>
         <input
           type="text"
           className="input input-info"
           value={aboutInfo?.email}
           readOnly
         />
+        <label className="txt font-semibold">
+          University
+        </label>
         <input
           type="text"
           className="input input-info"
           value={aboutInfo?.university}
           readOnly
         />
+        <label className="txt font-semibold">
+          Address
+        </label>
         <input
           type="text"
           className="input input-info"

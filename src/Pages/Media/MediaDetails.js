@@ -8,7 +8,7 @@ import { useQuery } from "@tanstack/react-query";
 import PostComments from "./PostComments";
 
 const MediaDetails = () => {
-  const { user } = useAuthProvider();
+  const { user, loading } = useAuthProvider();
   const [post, setPost] = useState();
   const [comments, setComments] = useState([]);
   const [activities, setActivities] = useState();
@@ -115,18 +115,18 @@ const MediaDetails = () => {
       // email: user?.email, displayName: user?.displayName 
     })
       // .then(res=>res.json())
-      .then((data) => {
-        // console.log(data);
+      // .then((data) => {
+      //   console.log(data);
 
-        if (data.status === 200) {
-          toast.success("Comment added");
-          // refetch();
-          // setRefresh(!refresh);
-        }
-      })
+      //   if (data.status === 200) {
+      //     toast.success("Comment added");
+      //     refetch();
+      //     setRefresh(!refresh);
+      //   }
+      // })
       .catch((e) => console.error("comment error => ", e));
 
-    setRefresh(!refresh);
+    // setRefresh(!refresh);
   };
 
   const count = post?.like || 0;
@@ -169,11 +169,12 @@ const MediaDetails = () => {
                 placeholder="Put your comment here"
               ></textarea>
               <div>
+                {loading ? <button className="btn btn-primary loading">posting</button> :
                 <input
                   type="submit"
                   value="post"
                   className="btn btn-info text-white btn-sm "
-                />
+                />}
               </div>
             </div>
           </form>

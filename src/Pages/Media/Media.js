@@ -29,7 +29,7 @@ const Media = () => {
               <img className="rounded-lg" src={post.image} alt="" />
             </div>
             <div className="p-3 ">
-              <p>{post.post}</p>
+              <p>{post.post?.slice(0,100)+'...'}</p>
               <Link
                 to={`/post-details/${post._id}`}
                 className="mt-2 btn btn-info text-white "
