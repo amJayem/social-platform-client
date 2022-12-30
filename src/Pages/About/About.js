@@ -17,7 +17,7 @@ const About = () => {
       .catch((e) => console.error("about update error", e));
   }, [aboutUpdate]);
 
-// console.log(aboutUpdate);
+  // console.log(aboutUpdate);
 
   return (
     <div>
@@ -28,7 +28,9 @@ const About = () => {
         </label>
       </div>
       <div className="grid grid-cols-1 gap-4 w-56 mx-auto">
-        <label htmlFor="" className="txt">Name</label>
+        <label htmlFor="" className="txt">
+          Name
+        </label>
         <input
           type="text"
           className="input input-info"
@@ -54,10 +56,10 @@ const About = () => {
           readOnly
         />
       </div>
-        <div id="#contact" className="my-5 grid ">
-          <button className="btn btn-info text-white  mx-auto">
-            <a
-              href="javascript:void(
+      <div id="#contact" className="my-5 grid ">
+        <button className="btn btn-info text-white  mx-auto">
+          <a
+            href="javascript:void(
         window.open(
           'https://form.jotform.com/223433907377461',
           'blank',
@@ -68,11 +70,11 @@ const About = () => {
         )
       )
     "
-            >
-              Contact me
-            </a>
-          </button>
-        </div>
+          >
+            Contact me
+          </a>
+        </button>
+      </div>
       <AboutModal aboutUpdate={aboutUpdate} setAboutUpdate={setAboutUpdate} />
     </div>
   );
