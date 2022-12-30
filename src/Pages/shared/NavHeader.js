@@ -1,7 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import useAuthProvider from "../../hooks/useAuthProvider";
-import { HiMenuAlt1 } from "react-icons/hi";
 
 const NavHeader = () => {
   const { user, logOut } = useAuthProvider();
@@ -13,7 +12,7 @@ const NavHeader = () => {
       <li>
         <Link to="/media">Media</Link>
         <Link to="">Messages</Link>
-        <Link to="">About</Link>
+        <Link to="/about">About</Link>
         {!user?.uid ? (
           <>
             <Link to="/login">Login</Link>

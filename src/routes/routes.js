@@ -5,6 +5,7 @@ import Login from '../Pages/Authentication/Login';
 import Register from '../Pages/Authentication/Register';
 import Media from '../Pages/Media/Media';
 import MediaDetails from '../Pages/Media/MediaDetails';
+import About from '../Pages/About/About';
 export const routes = createBrowserRouter([
     {
         path:'/',
@@ -22,6 +23,10 @@ export const routes = createBrowserRouter([
                 path: '/post-details/:id',
                 element: <MediaDetails/>
             },
+            {
+                path: '/about',
+                element: <About/>
+            }
         ],
     },
     {
