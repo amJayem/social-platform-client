@@ -7,9 +7,9 @@ const AboutModal = ({aboutUpdate,setAboutUpdate}) => {
   const id = '63ae777b11aed881a5bf221f';
 
   useEffect(() => {
-      axios.get(`http://localhost:5000/about`)
+      axios.get(`https://social-people-server.vercel.app/about`)
         .then((data) => {
-          console.log(data);
+          // console.log(data);
           setAboutInfo(data.data);
         })
         .catch((e) => console.error("about update error",e));
@@ -31,7 +31,7 @@ const AboutModal = ({aboutUpdate,setAboutUpdate}) => {
       address,
     };
 
-    axios.patch(`http://localhost:5000/update-about/${id}`,about)
+    axios.patch(`https://social-people-server.vercel.app/update-about/${id}`,about)
         // .then((res) => res.json())
         .then((data) => {
           console.log(data);

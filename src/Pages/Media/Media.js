@@ -5,7 +5,7 @@ const Media = () => {
   const [posts, setPosts] = useState(["test"]);
 
   useEffect(() => {
-    fetch("http://localhost:5000/posts")
+    fetch("https://social-people-server.vercel.app/posts")
       .then((res) => res.json())
       .then((data) => {
         // console.log(data);

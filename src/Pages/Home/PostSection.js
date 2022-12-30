@@ -29,7 +29,7 @@ const PostSection = () => {
           const image = imgData.data.data.display_url;
           // storing post to db
           axios
-            .post(`http://localhost:5000/post`, {
+            .post(`https://social-people-server.vercel.app/post`, {
               post,
               image,
               displayName: user?.displayName,
@@ -38,6 +38,7 @@ const PostSection = () => {
             .then((postData) => {
               toast.success("Post success");
               setLoading(false);
+              form.reset();
             })
             .catch((e) => {
               console.error("posting error => ", e);
@@ -79,7 +80,8 @@ const PostSection = () => {
           <div className="border-b mt-2"></div>
           <div className="mt-2">
             {loading ? (
-              <Spinner />
+              <button className="btn btn-info text-white loading">Posting</button>
+              // <Spinner />
             ) : (
               <input
                 type="submit"

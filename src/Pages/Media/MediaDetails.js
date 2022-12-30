@@ -19,7 +19,7 @@ const MediaDetails = () => {
   const { refetch } = useQuery({
     queryKey: [refresh],
     queryFn: async () => {
-      const res = await fetch(`http://localhost:5000/post-details/${id}`);
+      const res = await fetch(`https://social-people-server.vercel.app/post-details/${id}`);
       const data = await res.json();
       setPost(data);
       // console.log(data);
@@ -29,7 +29,7 @@ const MediaDetails = () => {
 
   // getting all comments by post
   useEffect(() => {
-    fetch(`http://localhost:5000/all-comments/${id}`)
+    fetch(`https://social-people-server.vercel.app/all-comments/${id}`)
       .then((res) => res.json())
       .then((data) => {
         // console.log(data);
@@ -43,7 +43,7 @@ const MediaDetails = () => {
 
   // getting like if have
   useEffect(() => {
-    fetch(`http://localhost:5000/activities/${id}`)
+    fetch(`https://social-people-server.vercel.app/activities/${id}`)
       .then((res) => res.json())
       .then((data) => {
         // console.log(data);
@@ -59,7 +59,7 @@ const MediaDetails = () => {
     console.log(newValue);
 
     axios
-      .patch(`http://localhost:5000/post-like/${id}`, { value: newValue })
+      .patch(`https://social-people-server.vercel.app/post-like/${id}`, { value: newValue })
       // .then(res=>res.json())
       .then((data) => {
         // console.log(data);
@@ -74,7 +74,7 @@ const MediaDetails = () => {
 
     // reaction storing to db
     axios
-      .post(`http://localhost:5000/my-reaction`, {
+      .post(`https://social-people-server.vercel.app/my-reaction`, {
         email: user?.email,
         like: true,
         postId: id,
@@ -98,7 +98,7 @@ const MediaDetails = () => {
       photoURL: user?.photoURL
     };
     axios
-      .post(`http://localhost:5000/comment`, commentInfo)
+      .post(`https://social-people-server.vercel.app/comment`, commentInfo)
       .then((data) => {
         console.log(data);
         if(data.status === 200){
@@ -111,7 +111,7 @@ const MediaDetails = () => {
       });
 
     axios
-      .patch(`http://localhost:5000/post-comment/${id}`, { comment: comment, 
+      .patch(`https://social-people-server.vercel.app/post-comment/${id}`, { comment: comment, 
       // email: user?.email, displayName: user?.displayName 
     })
       // .then(res=>res.json())

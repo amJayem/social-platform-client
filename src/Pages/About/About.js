@@ -9,7 +9,7 @@ const About = () => {
   // getting user info
   useEffect(() => {
     axios
-      .get(`http://localhost:5000/about`)
+      .get(`https://social-people-server.vercel.app/about`)
       .then((data) => {
         // console.log(data);
         setAboutInfo(data.data);
@@ -17,14 +17,14 @@ const About = () => {
       .catch((e) => console.error("about update error", e));
   }, [aboutUpdate]);
 
-console.log(aboutUpdate);
+// console.log(aboutUpdate);
 
   return (
     <div>
       <h1 className="text-4xl font-bold">About</h1>
       <div className="card-actions justify-end">
         <label htmlFor="about-modal" className="btn">
-          open modal
+          edit
         </label>
       </div>
       <div className="grid grid-cols-1 gap-4 w-56 mx-auto">
@@ -54,9 +54,8 @@ console.log(aboutUpdate);
           readOnly
         />
       </div>
-      <div className="my-5 ">
-        <div id="#contact">
-          <button className="btn btn-info text-white">
+        <div id="#contact" className="my-5 grid ">
+          <button className="btn btn-info text-white  mx-auto">
             <a
               href="javascript:void(
         window.open(
@@ -74,7 +73,6 @@ console.log(aboutUpdate);
             </a>
           </button>
         </div>
-      </div>
       <AboutModal aboutUpdate={aboutUpdate} setAboutUpdate={setAboutUpdate} />
     </div>
   );

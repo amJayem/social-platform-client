@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 const TopPosts = () => {
   const [topPosts, setPosts] = useState([]);
   useEffect(() => {
-    fetch(`http://localhost:5000/top-posts`)
+    fetch(`https://social-people-server.vercel.app/top-posts`)
       .then((res) => res.json())
       .then((data) => {
         // console.log(data);
