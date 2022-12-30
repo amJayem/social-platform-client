@@ -6,6 +6,7 @@ import Register from '../Pages/Authentication/Register';
 import Media from '../Pages/Media/Media';
 import MediaDetails from '../Pages/Media/MediaDetails';
 import About from '../Pages/About/About';
+import PrivateRoute from './PrivateRoute';
 export const routes = createBrowserRouter([
     {
         path:'/',
@@ -21,7 +22,7 @@ export const routes = createBrowserRouter([
             },
             {
                 path: '/post-details/:id',
-                element: <MediaDetails/>
+                element: <PrivateRoute><MediaDetails/></PrivateRoute>
             },
             {
                 path: '/about',
